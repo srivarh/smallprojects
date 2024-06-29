@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    transition: .4s;
+}
+
+.input {
+    visibility: hidden;
+    
+  }
+  
+  .label {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(99, 26, 26);
+
+  }
+  
+  .circle {
+    width: 34px;
+    background-color: white;
+    height: 34px;
+    border-radius: 50%;
+    top: 3px;
+    position: absolute;
+    left: 3px;
+    animation: toggleOff 0.4s linear forwards;
+  }
+  
+  .input:checked + .label {
+    background-color: rgb(123, 146, 24);
+
+  }
+  
+  .input:checked + .label .circle {
+    animation: toggleOn 0.4s linear forwards;
+    background-color: black;
+  }
+  
+  @keyframes toggleOn {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(40px);
+    }
+  }
+  
+  @keyframes toggleOff {
+    0% {
+      transform: translateX(40px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .calculator {
+    background:  #c2d3cd;;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    border: solid 1px #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-top: 90px;
+  }
+  
+  #result{
+      width: 100%;
+      padding: 10px;
+      font-size: 24px;
+      border:2px solid black;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
+      border-radius: 5px;
+      background-color: #afbfc0;
+  }
+  
+  .buttons{
+      display:grid;
+      grid-template-columns: repeat(4, 2fr);
+      grid-gap: 10px;
+      margin-top: 20px;
+      
+  }
+  
+  button{
+      padding: 10px;
+      font-size: 24px;
+      border: 1px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      /* transition: background-color 0.3s ease; */
+  
+  }
+  
+  button:hover{
+      background-color:#56494c;
+      color:#fff;
+  }
+  
+  .clear{
+      background-color:#847e89;
+      color: #fff;
+  }
+  
+  .number, .decimal{
+      background-color: #869d96;
+      color: #333;
+  
+  }
+  
+  .operator{
+      background-color: #a5978b;
+      color: #fff;
+  }
+  
+  .equals{
+      background-color: #89937c;
+      grid-row: span 3;
+      color: #fff;
+  }
